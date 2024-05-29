@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+
+
+			<section class="hero">
+				<div class="hero__container">
+					<div class="hero__body">
+						<h1 class="hero__title">RFID-технологии в Узбекистане</h1>
+						<div class="hero__text">
+							<p>Мы - официальный и единственный дистрибьютер RFID-маркировок
+								и сканеров в Узбекистане, предоставляющий клиентам передовые решения для оптимизации бизнес-процессов и повышения эффективности. </p>
+						</div>
+						<div class="hero__buttons">
+							<button class="hero__button button">Получить консультацию</button>
+							<a href="#" class="hero__button button button_line">Смотреть каталог</a>
+						</div>
+
+
+					</div>
+					<div class="hero__image"><img src="@img/hero/01.png"></div>
+					<!-- <div class="hero__image"><img src="@img/hero/02.png"></div> -->
+				</div>
+			</section>
+
+			<!--
+				<section class="test">
+					<div class="test__container">
+						<div class="test__body">
+
+						</div>
+					</div>
+				</section>
+			-->
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

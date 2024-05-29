@@ -1,0 +1,57 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: toRem(10) toRem(30);
+
+  border-radius: 5px;
+  height: toRem(38);
+
+  border: 1px solid #4fba70;
+  background-color: #4fba70;
+
+  font-family: "PP Neue Montreal";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #fff;
+
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: rgba(79, 186, 113, 0.8);
+      background-color: rgba(79, 186, 113, 0.8);
+    }
+  }
+  &--fw {
+    width: 100%;
+  }
+
+  &_white {
+    border-color: #fff;
+    background-color: #fff;
+    color: #242424;
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  &_line {
+    background-color: transparent;
+    border-color: #fff;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #242424;
+        border-color: #fff;
+        background-color: #fff;
+      }
+    }
+  }
+}

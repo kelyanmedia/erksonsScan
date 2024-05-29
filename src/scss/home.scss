@@ -1,0 +1,114 @@
+//====================================================================================================
+
+.hero {
+  position: relative;
+  border-radius: 0 0 20px 20px;
+
+  background-image: url("@img/hero/pattern.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: top right;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #0575e6 0%, #021b79 100%);
+    z-index: -1;
+  }
+
+  @media (max-width: $tablet) {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: toRem(550);
+  }
+
+  &__body {
+    position: relative;
+    z-index: 2;
+    padding-top: toRem(130);
+    padding-bottom: toRem(100);
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 60, 35);
+    line-height: 110%;
+    color: #fff;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 15);
+    }
+  }
+
+  &__text {
+    max-width: toRem(537);
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #fff;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 15, 10);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    @include adaptiveValue("gap", 20, 10);
+
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__button {
+    @media (max-width: $mobile) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: toRem(550);
+    bottom: 0;
+    right: -99px;
+    z-index: 1;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: contain;
+      object-position: bottom right;
+    }
+  }
+}
+
+//====================================================================================================
