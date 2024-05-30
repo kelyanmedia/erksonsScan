@@ -380,7 +380,7 @@
 
 .work {
   @include adaptiveValue("padding-top", 150, 30);
-  @include adaptiveValue("padding-bottom", 150, 30);
+  @include adaptiveValue("padding-bottom", 100, 30);
   &__container {
   }
 
@@ -511,7 +511,7 @@
 //========================================================================================================================================================
 
 .submit {
-  @include adaptiveValue("padding-top", 195, 40);
+  @include adaptiveValue("padding-top", 100, 40);
   @include adaptiveValue("padding-bottom", 150, 40);
   &__container {
   }

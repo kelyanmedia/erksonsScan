@@ -81,3 +81,25 @@
     border-color: #000;
   }
 }
+
+//========================================================================================================================================================
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: toRem(10);
+  &__button {
+    @include adaptiveValue("font-size", 45, 35);
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #0575e6;
+      }
+    }
+    .button-prev {
+    }
+
+    .button-next {
+    }
+  }
+}
