@@ -1,0 +1,315 @@
+.trust {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+    display: grid;
+    gap: toRem(20);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    margin-bottom: toRem(20);
+  }
+
+  &__text {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 120%;
+    color: #242424;
+  }
+
+  &__clients {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+//========================================================================================================================================================
+
+.history {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__body {
+    @include adaptiveValue("padding-top", 50, 30);
+    @include adaptiveValue("padding-bottom", 50, 30);
+    @include adaptiveValue("padding-left", 30, 15, 0, 1430, 767);
+    @include adaptiveValue("padding-right", 30, 15, 0, 1430, 767);
+
+    background-color: #4fba70;
+    border-radius: 20px;
+
+    display: grid;
+    gap: toRem(20);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile) {
+      margin-right: toRem(-15);
+      margin-left: toRem(-15);
+    }
+  }
+
+  &__main {
+  }
+
+  &__title {
+    margin-bottom: toRem(16);
+  }
+
+  &__text {
+    max-width: toRem(530);
+  }
+
+  &__content {
+  }
+
+  &__point {
+  }
+}
+
+.point-history {
+  position: relative;
+  color: #fff;
+
+  @include adaptiveValue("padding-left", 100, 70, 0, 1430, 991);
+  &:not(:last-child) {
+    margin-bottom: toRem(70);
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(70);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: calc(100% + toRem(70));
+    top: 0;
+    left: toRem(24);
+    background-color: #fff;
+    @media (max-width: $mobile) {
+      height: calc(100% + toRem(50));
+    }
+  }
+  &:last-child::before {
+    bottom: calc(100% - toRem(36));
+    top: auto;
+  }
+
+  &::after {
+    content: "";
+    width: toRem(80);
+    height: toRem(80);
+    display: block;
+    background-image: url("@img/history/icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    z-index: 2;
+    top: toRem(-16);
+    left: toRem(-16);
+    background-color: #4fba70;
+    border: 16px solid #4fba70;
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.text-block {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__body {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    @include adaptiveValue("padding-top", 275, 100);
+    @include adaptiveValue("padding-bottom", 50, 30);
+    @include adaptiveValue("padding-left", 30, 15, 0, 1430, 767);
+    @include adaptiveValue("padding-right", 30, 15, 0, 1430, 767);
+  }
+
+  &__title {
+    margin-bottom: toRem(20);
+  }
+
+  &__text {
+    max-width: toRem(712);
+  }
+
+  &__bg-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+//========================================================================================================================================================
+
+.valuation {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 80, 30);
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("column-gap", 48, 15, 0, 1430, 991);
+    @include adaptiveValue("row-gap", 40, 25);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(330), 1fr));
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-valuation {
+  &__image-ibg {
+    border-radius: 12px;
+    overflow: hidden;
+    padding-bottom: percent(240, 430);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 32, 20);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 24, 10);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000;
+  }
+}
+
+//========================================================================================================================================================
+
+.reviews {
+  @include adaptiveValue("padding-top", 50, 30);
+  @include adaptiveValue("padding-bottom", 50, 30);
+  background-color: #0575e6;
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 50, 30);
+  }
+
+  &__body {
+  }
+
+  &__slider {
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__pagination {
+    @include adaptiveValue("margin-top", 50, 30);
+  }
+}
+
+.slide-reviews {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: "Roboto";
+
+  border: 1px solid #fff;
+  @include adaptiveValue("padding", 32, 20);
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(24);
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  &__name {
+    margin-top: auto;
+    font-weight: 600;
+    font-size: toRem(16);
+    line-height: 150%;
+  }
+
+  &__place {
+    font-size: toRem(16);
+    line-height: 150%;
+  }
+}

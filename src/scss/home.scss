@@ -59,6 +59,14 @@
     }
   }
 
+  &__subtitle {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 40, 32);
+    line-height: 120%;
+    color: #fff;
+    max-width: toRem(798);
+  }
+
   &__text {
     max-width: toRem(537);
     font-weight: 400;
@@ -300,6 +308,12 @@
   }
 
   &__items {
+  }
+
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(toRem(165), 1fr));
+    gap: toRem(10);
   }
 
   &__item {

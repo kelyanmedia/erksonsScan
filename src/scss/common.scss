@@ -53,3 +53,31 @@
     transition: all 0.2s ease 0s;
   }
 }
+
+//========================================================================================================================================================
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(10);
+  .swiper-pagination-bullet {
+    cursor: pointer;
+    border-radius: 50%;
+    width: toRem(17);
+    height: toRem(17);
+    display: block;
+    background-color: #fff;
+    border: 2px solid transparent;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #000;
+      }
+    }
+  }
+  .swiper-pagination-bullet-active {
+    border-color: #000;
+  }
+}
