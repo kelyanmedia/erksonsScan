@@ -56,65 +56,6 @@
       }
     }
   }
-  //   ._spoller-init & {
-  //     cursor: pointer;
-  //     &::before,
-  //     &::after {
-  //       content: "";
-  //       position: absolute;
-  //       right: 10px;
-  //       top: 50%;
-  //       background-color: #000;
-  //       height: 2px;
-  //       width: 15px;
-  //       transition: transform 0.5s ease 0s;
-  //     }
-  //     &::before {
-  //       transform: translate(-75%, -50%) rotate(40deg);
-  //     }
-  //     &::after {
-  //       transform: translate(0, -50%) rotate(-40deg);
-  //     }
-  //     &._spoller-active {
-  //       &::before {
-  //         transform: translateX(-75%) rotate(-40deg);
-  //       }
-  //       &::after {
-  //         transform: rotate(40deg);
-  //       }
-  //     }
-
-  //   ._spoller-init & {
-  //     position: relative;
-  //     width: 100%;
-  //     text-align: left;
-  //     &::before,
-  //     &::after {
-  //       content: "";
-  //       position: absolute;
-  //       right: 0;
-  //       top: toRem(12);
-  //       height: toRem(1);
-  //       transition: all 0.3s ease 0s;
-  //       width: toRem(10);
-  //       background-color: #000;
-  //     }
-  //     &::before {
-  //       transform: rotate(40deg);
-  //       right: toRem(7);
-  //     }
-  //     &::after {
-  //       transform: rotate(-40deg);
-  //     }
-  //   }
-  //   &._spoller-active {
-  //     &::before {
-  //       transform: rotate(-40deg);
-  //     }
-  //     &::after {
-  //       transform: rotate(40deg);
-  //     }
-  //   }
 }
 // }
 // Контент спойлера
@@ -128,4 +69,56 @@
   @include adaptiveValue("font-size", 20, 18);
   line-height: 120%;
   color: #242424;
+}
+
+//========================================================================================================================================================
+
+.spollers-lite {
+  &__item {
+    border-bottom: 1px solid #fff;
+
+    &:first-child {
+      border-top: 1px solid #fff;
+    }
+  }
+
+  &__title {
+    cursor: pointer;
+    position: relative;
+    text-align: start;
+    width: 100%;
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #fff;
+    padding: toRem(16) 0;
+
+    ._spoller-init & {
+      &::before {
+        content: "\e900";
+        @extend %ic;
+        position: absolute;
+        top: toRem(25);
+        right: 0;
+        color: #fff;
+        transition: transform 0.3s ease 0s;
+        transform: rotate(0);
+        font-size: toRem(13);
+      }
+
+      &._spoller-active {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__body {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #fff;
+    padding-bottom: toRem(24);
+  }
 }

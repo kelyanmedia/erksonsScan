@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Autoplay, Navigation, Pagination, Mousewheel, Thumbs, EffectFade } from "swiper/modules"
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -222,6 +222,60 @@ function initSliders() {
         breakpointChecker()
       })()
     }
+  }
+
+  if (document.querySelector(".product__slider")) {
+    const productTrumbSlider = new Swiper(".product__trumbs-slider", {
+      modules: [Mousewheel],
+      observer: true,
+      observeParents: true,
+
+      speed: 300,
+      lazyPreloaderClass: "preloader",
+      mousewheel: true,
+      direction: "vertical",
+      breakpoints: {
+        320: {
+          slidesPerView: 3,
+          spaceBetween: 2,
+        },
+        768: {
+          slidesPerView: "auto",
+          spaceBetween: 16,
+        },
+      },
+    })
+
+    new Swiper(".product__slider", {
+      modules: [Thumbs, Navigation, Autoplay, EffectFade, Pagination],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 800,
+      lazyPreloaderClass: "preloader",
+
+      effect: "fade",
+      // autoplay: {
+      // 	delay: 4000,
+      // 	disableOnInteraction: false,
+      // 	pauseOnMouseEnter: true,
+      // },
+
+      pagination: {
+        el: ".product__pagination ",
+        clickable: true,
+      },
+
+      navigation: {
+        prevEl: ".product__slider .button-prev",
+        nextEl: ".product__slider .button-next",
+      },
+
+      thumbs: {
+        swiper: productTrumbSlider,
+      },
+    })
   }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
