@@ -109,9 +109,7 @@
     max-width: 100%;
 
     margin-top: toRem(30);
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 50, 25);
-    }
+    @include adaptiveValue("margin-bottom", 50, 25);
   }
 
   p {
