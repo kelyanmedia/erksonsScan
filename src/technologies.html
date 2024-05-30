@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+
+            <section class="hero">
+                <div class="hero__container">
+                    <div class="hero__body">
+                        <h1 class="hero__subtitle">Что такое RFID-технология? </h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="text-block">
+                <div class="text-block__container">
+                    <div class="text-block__body">
+                        <h2 class="text-block__title title title_white">RFID (Radio Frequency Identification)</h2>
+                        <div class="text-block__text text text_white">
+                            <p>Это метод бесконтактной идентификации, отслеживания и учета объектов, основанный на радиочастотном электромагнитном излучении. </p>
+
+                            <p>Внедрение RFID оправдано в целях отслеживания важных грузов на дальнем расстоянии, интеллектуальной инвентаризации товаров и для работы в системах контроля и управления доступом (СКУД).</p>
+
+                            <p>Комбинируя эти функции, компании могут создавать собственные RFID-программы для оптимизации бизнес-процессов. Они эксплуатируются в разных сферах: от розничной торговли и фармацевтической промышленности до логистики и крупных производств.</p>
+                        </div>
+                        <div class="text-block__bg-ibg"><img src="@img/text-block/02.jpg" alt="" loading="lazy"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="technologies">
+                <div class="technologies__container">
+                    <h2 class="technologies__title title">Применение </h2>
+                    <div class="technologies__text text">
+                        <p>RFID выполняет множество важных функций, оптимизирующих бизнес – в том числе сокращает расходы и уменьшает вероятность ошибок, вызванных человеческим фактором: например, невнимательностью или недостаточной квалификацией сотрудника. </p>
+                    </div>
+                    <div class="technologies__items">
+                        <div class="technologies__item content-item">
+                            <div class="content-item__content">
+                                <div class="content-item__text-big">Cнижает время инвентаризации
+                                    и складской обработки</div>
+                            </div>
+                            <div class="content-item__image-ibg"><img src="@img/content/05.jpg" alt="" loading="lazy"></div>
+                        </div>
+                        <div class="technologies__item content-item">
+                            <div class="content-item__content">
+                                <div class="content-item__text-big">Автоматизирует технологические операции на производстве</div>
+                            </div>
+                            <div class="content-item__image-ibg"><img src="@img/content/06.jpg" alt="" loading="lazy"></div>
+                        </div>
+                        <div class="technologies__item content-item">
+                            <div class="content-item__content">
+                                <div class="content-item__text-big">Позволяет отследить перемещение товаров
+                                    на любом этапе доставки, а также в случае кражи</div>
+                            </div>
+                            <div class="content-item__image-ibg"><img src="@img/content/07.jpg" alt="" loading="lazy"></div>
+                        </div>
+                        <div class="technologies__item content-item">
+                            <div class="content-item__content">
+                                <div class="content-item__text-big">Контроль доступа
+                                    к товарам, использование которых ограничено узким кругом лиц</div>
+                            </div>
+                            <div class="content-item__image-ibg"><img src="@img/content/08.jpg" alt="" loading="lazy"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits">
+                <div class="benefits__container">
+                    <h2 class="benefits__title title">Преимущества технологии</h2>
+                    <div class="benefits__items">
+                        <div class="benefits__item item-benefits">
+                            <div class="item-benefits__text">Автоматизация
+                                и оптимизация
+                                бизнес-процессов</div>
+                        </div>
+                        <div class="benefits__item item-benefits">
+                            <div class="item-benefits__text">Улучшение точности инвентаризации
+                                и отслеживания товаров</div>
+                        </div>
+                        <div class="benefits__item item-benefits">
+                            <div class="item-benefits__text">Увеличение эффективности складского управления
+                                и логистики</div>
+                        </div>
+                        <div class="benefits__item item-benefits">
+                            <div class="item-benefits__text">Обеспечение безопасности
+                                и антикражной защиты товаров</div>
+                        </div>
+                        <div class="benefits__item item-benefits">
+                            <div class="item-benefits__text">Повышение качества обслуживания клиентов
+                                и удовлетворенности</div>
+                        </div>
+                        <div class="benefits__item item-benefits">
+                            <div class="item-benefits__text">Применение в различных отраслях: логистика, производство, торговля</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            @@include('html/_products_small.htm',{
+            "title":"RFID-маркировки и метки:"
+            })
+
+
+            @@include('html/_products_small.htm',{
+            "title":"RFID-сканеры и считыватели:"
+            })
+
+
+            @@include('html/_products_small.htm',{
+            "title":"Дополнительные аксессуары и оборудование:"
+            })
+
+            @@include('html/_submit.htm',{})
+
+            @@include('html/_contact.htm',{})
+
+            <!--
+				<section class="test">
+					<div class="test__container">
+						<div class="test__body">
+
+						</div>
+					</div>
+				</section>
+			-->
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -180,6 +180,12 @@
 
   &__text {
     max-width: toRem(712);
+
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 15);
+      }
+    }
   }
 
   &__bg-ibg {

@@ -193,6 +193,13 @@
     color: #242424;
   }
 
+  &__text-big {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #242424;
+  }
+
   &__name {
     font-weight: 500;
     @include adaptiveValue("font-size", 24, 22);
@@ -661,5 +668,67 @@
         opacity: 0.8;
       }
     }
+  }
+}
+
+//========================================================================================================================================================
+
+.benefits {
+  @include adaptiveValue("padding-top", 100, 40);
+  @include adaptiveValue("padding-bottom", 100, 40);
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 20, 15, 0, 1430, 991);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(380), 1fr));
+    }
+    counter-reset: num;
+  }
+
+  &__item {
+  }
+}
+
+.item-benefits {
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: toRem(20);
+
+  @include adaptiveValue("padding", 30, 20);
+
+  &::before {
+    counter-increment: num;
+    content: counter(num);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #021b79;
+    border-radius: 50%;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: #fff;
+  }
+
+  &__text {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #242424;
   }
 }

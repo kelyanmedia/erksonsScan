@@ -263,7 +263,7 @@ function initSliders() {
       // },
 
       pagination: {
-        el: ".product__pagination ",
+        el: ".product__pagination",
         clickable: true,
       },
 
