@@ -1,0 +1,135 @@
+.blog {
+  @include adaptiveValue("padding-top", 125, 100);
+  @include adaptiveValue("padding-bottom", 100, 30);
+  &__container {
+    display: grid;
+
+    max-width: toRem(1342);
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 60, 30);
+    line-height: 110%;
+    text-align: center;
+    color: #000;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__items {
+    display: grid;
+    column-gap: toRem(20);
+    row-gap: toRem(50);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(380), 1fr));
+    }
+  }
+
+  &__item {
+  }
+
+  &__button {
+    justify-self: center;
+    @include adaptiveValue("margin-top", 50, 30);
+  }
+}
+.item-blog {
+  font-family: "Roboto";
+  &__image-ibg {
+    display: block;
+    overflow: hidden;
+    padding-bottom: percent(300, 425);
+    @include adaptiveValue("margin-bottom", 25, 15);
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    img {
+      transition: transform 0.3s ease 0s;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 140%;
+    color: #000;
+    margin-bottom: toRem(10);
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 150%;
+    color: #000;
+  }
+}
+
+//========================================================================================================================================================
+
+.article-blog {
+  @include adaptiveValue("padding-top", 125, 100);
+  @include adaptiveValue("padding-bottom", 100, 30);
+  &__container {
+    max-width: toRem(800);
+  }
+  font-family: "Roboto";
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 35, 25);
+    line-height: 120%;
+    color: #000;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 25, 15);
+    }
+  }
+
+  h1 {
+    @include adaptiveValue("font-size", 40, 30);
+  }
+
+  img {
+    max-width: 100%;
+
+    margin-top: toRem(30);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 25);
+    }
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+  b {
+    font-size: toRem(20);
+  }
+}
+.quote {
+  font-weight: Inter;
+  font-style: italic;
+  font-weight: 400;
+  @include adaptiveValue("font-size", 20, 16);
+  line-height: 140%;
+  color: #000;
+
+  padding-left: toRem(24);
+  border-left: 2px solid #000;
+}

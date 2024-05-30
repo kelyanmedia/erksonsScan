@@ -46,6 +46,7 @@
     z-index: 2;
     padding-top: toRem(130);
     padding-bottom: toRem(100);
+    flex: 1 1 auto;
   }
 
   &__title {
@@ -116,6 +117,94 @@
       left: 0;
       object-fit: contain;
       object-position: bottom right;
+    }
+  }
+
+  &__contacts {
+  }
+}
+
+.contacts-hero {
+  display: flex;
+  align-items: center;
+  gap: toRem(30);
+  font-family: "Roboto";
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__body {
+    @media (min-width: $tablet) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__maintitle {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 48, 32);
+    line-height: 120%;
+    color: #fff;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 25, 20);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 150%;
+    color: #fff;
+  }
+
+  &__contact {
+    @media (min-width: $tablet) {
+      flex: 0 0 toRem(500);
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: toRem(16);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 25, 20);
+    }
+  }
+
+  &__ico {
+    width: toRem(24);
+    height: toRem(24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__inner {
+    color: #fff;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: toRem(20);
+    line-height: 140%;
+    margin-bottom: toRem(8);
+  }
+
+  &__link {
+    font-size: toRem(16);
+    line-height: 150%;
+    text-decoration: underline;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
