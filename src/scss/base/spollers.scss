@@ -3,90 +3,129 @@
 
 // Блок зі спойлерами
 .spollers {
-	display: grid;
-	gap: 15px;
+  display: grid;
+  @include adaptiveValue("gap", 20, 15);
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+  font-size: toRem(20);
 }
 // Заголовок спойлера
 .spollers__title {
-	width: 100%;
-	cursor: default;
-	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
-	list-style: none;
-	&::marker {
-	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
-				width: toRem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
-	}
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 12px;
+  background-color: #e8edf3;
+  padding-top: toRem(20);
+  padding-bottom: toRem(20);
+  @include adaptiveValue("padding-left", 30, 20);
+  @include adaptiveValue("padding-right", 50, 40);
+
+  font-weight: 500;
+  @include adaptiveValue("font-size", 24, 20);
+  line-height: 120%;
+  color: #242424;
+
+  position: relative;
+  list-style: none;
+  &::marker {
+  }
+
+  ._spoller-init & {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      top: toRem(30);
+      @include adaptiveValue("right", 20, 10);
+      background-color: #242424;
+      transition: transform 0.3s ease 0s;
+    }
+    &::before {
+    }
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &._spoller-active {
+      &::after {
+        transform: rotate(0);
+      }
+    }
+  }
+  //   ._spoller-init & {
+  //     cursor: pointer;
+  //     &::before,
+  //     &::after {
+  //       content: "";
+  //       position: absolute;
+  //       right: 10px;
+  //       top: 50%;
+  //       background-color: #000;
+  //       height: 2px;
+  //       width: 15px;
+  //       transition: transform 0.5s ease 0s;
+  //     }
+  //     &::before {
+  //       transform: translate(-75%, -50%) rotate(40deg);
+  //     }
+  //     &::after {
+  //       transform: translate(0, -50%) rotate(-40deg);
+  //     }
+  //     &._spoller-active {
+  //       &::before {
+  //         transform: translateX(-75%) rotate(-40deg);
+  //       }
+  //       &::after {
+  //         transform: rotate(40deg);
+  //       }
+  //     }
+
+  //   ._spoller-init & {
+  //     position: relative;
+  //     width: 100%;
+  //     text-align: left;
+  //     &::before,
+  //     &::after {
+  //       content: "";
+  //       position: absolute;
+  //       right: 0;
+  //       top: toRem(12);
+  //       height: toRem(1);
+  //       transition: all 0.3s ease 0s;
+  //       width: toRem(10);
+  //       background-color: #000;
+  //     }
+  //     &::before {
+  //       transform: rotate(40deg);
+  //       right: toRem(7);
+  //     }
+  //     &::after {
+  //       transform: rotate(-40deg);
+  //     }
+  //   }
+  //   &._spoller-active {
+  //     &::before {
+  //       transform: rotate(-40deg);
+  //     }
+  //     &::after {
+  //       transform: rotate(40deg);
+  //     }
+  //   }
 }
+// }
 // Контент спойлера
 .spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+  padding: toRem(20);
+  border-radius: toRem(12);
+  background-color: #e8edf3;
+  margin-top: toRem(10);
+
+  font-weight: 400;
+  @include adaptiveValue("font-size", 20, 18);
+  line-height: 120%;
+  color: #242424;
 }

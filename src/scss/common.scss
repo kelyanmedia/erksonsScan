@@ -2,8 +2,54 @@
 
 //========================================================================================================================================================
 
-// .fancybox__container {
-//     max-width: none;
-// }
+.fancybox__container {
+  max-width: none;
+}
 
 //========================================================================================================================================================
+
+.title {
+  font-weight: 500;
+  @include adaptiveValue("font-size", 40, 26);
+  line-height: 120%;
+  color: #242424;
+
+  &_white {
+    color: #fff;
+  }
+}
+.text {
+  font-weight: 500;
+  @include adaptiveValue("font-size", 24, 18);
+  line-height: 120%;
+  color: #242424;
+
+  &_white {
+    color: #fff;
+  }
+}
+
+.play {
+  position: relative;
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+    }
+  }
+
+  &::before {
+    content: "\e904";
+    @extend %ic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include adaptiveValue("font-size", 100, 60);
+    z-index: 2;
+    color: #fff;
+    transition: all 0.2s ease 0s;
+  }
+}

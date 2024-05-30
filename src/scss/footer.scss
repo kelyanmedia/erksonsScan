@@ -1,3 +1,47 @@
 //====================================================================================================
 
+.footer {
+  background-color: #0575e6;
+  @include adaptiveValue("padding-top", 50, 40);
+  @include adaptiveValue("padding-bottom", 50, 40);
+  &__container {
+    max-width: toRem(1230);
+
+    display: grid;
+    @include adaptiveValue("gap", 30, 20);
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__list {
+    color: #fff;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: toRem(24);
+    line-height: 120%;
+    @include adaptiveValue("margin-bottom", 20, 15);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 //====================================================================================================

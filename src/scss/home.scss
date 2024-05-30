@@ -3,6 +3,7 @@
 .hero {
   position: relative;
   border-radius: 0 0 20px 20px;
+  overflow: hidden;
 
   background-image: url("@img/hero/pattern.svg");
   background-repeat: no-repeat;
@@ -112,3 +113,539 @@
 }
 
 //====================================================================================================
+
+.technologies {
+  @include adaptiveValue("padding-top", 120, 35);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+    display: grid;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__text {
+    max-width: toRem(909);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 20, 15);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(480), 1fr));
+    }
+  }
+
+  &__item {
+  }
+
+  &__button {
+    justify-self: center;
+    @include adaptiveValue("margin-top", 50, 30);
+  }
+}
+
+.content-item {
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+
+  @media (max-width: em(660)) {
+    flex-direction: column-reverse;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    @include adaptiveValue("padding", 30, 20);
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #242424;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 15);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #242424;
+  }
+
+  &__name {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #242424;
+  }
+
+  &__place {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #242424;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__image-ibg {
+    @include adaptiveValue("min-height", 230, 200);
+
+    @media (min-width: em(660)) {
+      flex: 0 0 percent(320, 690);
+    }
+  }
+
+  ul,
+  li {
+    list-style: disc;
+  }
+
+  li {
+    margin-left: toRem(25);
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.doing {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 50, 30);
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 25, 15);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(450), 1fr));
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-doing {
+  @include adaptiveValue("padding", 30, 20);
+  border-radius: 14px;
+  background-color: #fff;
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__ico {
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #242424;
+  }
+
+  &__text {
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #242424;
+  }
+}
+
+//========================================================================================================================================================
+
+.clients {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 65, 30);
+
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+
+  &__items {
+  }
+
+  &__item {
+    border-radius: toRem(10);
+    position: relative;
+    @include adaptiveValue("height", 80, 70);
+
+    img {
+      // border-radius: toRem(10);
+      // overflow: hidden;
+      // max-width: 100%;
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: contain;
+    }
+  }
+}
+
+.item-clients {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+//========================================================================================================================================================
+
+.video {
+  @include adaptiveValue("padding-top", 160, 60);
+  @include adaptiveValue("padding-bottom", 100, 40);
+
+  background-color: #0575e6;
+
+  border-radius: 0 0 20px 20px;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    @include adaptiveValue("height", 60, 20);
+    top: 0;
+    left: 0;
+    border-radius: 0 0 20px 20px;
+    background-color: #edf2f7;
+  }
+  &__container {
+  }
+
+  &__preview-ibg {
+    background-color: #edf2f7;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: block;
+    padding-bottom: 50%;
+  }
+}
+
+//========================================================================================================================================================
+
+.work {
+  @include adaptiveValue("padding-top", 150, 30);
+  @include adaptiveValue("padding-bottom", 150, 30);
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 20, 15);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(335), 1fr));
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-work {
+  display: flex;
+  flex-direction: column;
+  &_big {
+    grid-column: 1 / -1;
+
+    .item-work__image-ibg {
+      padding-bottom: percent(220, 1400);
+      min-height: toRem(130);
+    }
+  }
+
+  &__image-ibg {
+    display: block;
+    padding-bottom: percent(220, 335);
+    @include adaptiveValue("margin-bottom", 30, 20);
+
+    border-radius: toRem(12);
+    overflow: hidden;
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    img {
+      transition: transform 0.3s ease 0s;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #000;
+
+    @include adaptiveValue("margin-bottom", 20, 15);
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #0575e6;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #000;
+    @include adaptiveValue("margin-bottom", 20, 15);
+    flex: 1 1 auto;
+  }
+
+  &__text-big {
+    max-width: toRem(838);
+    font-weight: 400;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 120%;
+    color: #000;
+    @include adaptiveValue("margin-bottom", 20, 15);
+
+    b {
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.faq {
+  @include adaptiveValue("padding-top", 100, 30);
+  @include adaptiveValue("padding-bottom", 100, 30);
+
+  background-color: #fff;
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__spollers {
+  }
+}
+
+//========================================================================================================================================================
+
+.submit {
+  @include adaptiveValue("padding-top", 195, 40);
+  @include adaptiveValue("padding-bottom", 150, 40);
+  &__container {
+  }
+
+  &__body {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include adaptiveValue("padding-top", 50, 30);
+    @include adaptiveValue("padding-bottom", 50, 30);
+    @include adaptiveValue("padding-left", 50, 15, 0, 1430, 767);
+    @include adaptiveValue("padding-right", 50, 15, 0, 1430, 767);
+  }
+
+  &__title {
+    margin-bottom: toRem(20);
+  }
+
+  &__text {
+    max-width: toRem(712);
+    margin-bottom: toRem(20);
+  }
+
+  &__form {
+    @media (min-width: $mobile) {
+      max-width: toRem(490);
+    }
+  }
+
+  &__bg-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.form-submit {
+  &__inputs {
+    margin-bottom: toRem(10);
+  }
+
+  &__input {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__checkbox {
+    margin-bottom: toRem(20);
+  }
+
+  &__button {
+    min-height: toRem(58);
+    min-width: toRem(267);
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.contact {
+  @include adaptiveValue("padding-top", 100, 40);
+  @include adaptiveValue("padding-bottom", 100, 40);
+  border-radius: 20px;
+  background-color: #fff;
+  &__container {
+    display: grid;
+    gap: toRem(30);
+
+    @media (min-width: $tablet) {
+      gap: toRem(20);
+      grid-template-columns: 1fr percent(710, 1400);
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 85, 35);
+    }
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 50, 30, 0, 1430, 991);
+
+    @media (min-width: em(600)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-contact {
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 120%;
+    color: #242424;
+    margin-bottom: toRem(10);
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 140%;
+    color: #242424;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #0575e6;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__social {
+  }
+
+  &__map {
+    background-color: #edf2f7;
+    @include adaptiveValue("height", 450, 400);
+  }
+}
+
+.social-contact {
+  display: flex;
+  gap: toRem(10);
+  &__item {
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
