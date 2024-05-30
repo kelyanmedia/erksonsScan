@@ -19,7 +19,7 @@
 								и сканеров в Узбекистане, предоставляющий клиентам передовые решения для оптимизации бизнес-процессов и повышения эффективности. </p>
 						</div>
 						<div class="hero__buttons">
-							<button class="hero__button button">Получить консультацию</button>
+							<button class="hero__button button" data-popup="#popup">Получить консультацию</button>
 							<a href="#" class="hero__button button button_line">Смотреть каталог</a>
 						</div>
 
@@ -82,7 +82,7 @@
 							<div class="content-item__image-ibg"><img src="@img/content/04.jpg" alt="" loading="lazy"></div>
 						</div>
 					</div>
-					<button class="technologies__button button">Получить консультацию для своего бизнеса</button>
+					<button class="technologies__button button" data-popup="#popup">Получить консультацию для своего бизнеса</button>
 				</div>
 			</section>
 
@@ -122,7 +122,7 @@
 				</div>
 			</section>
 
-
+			@@include('html/_clients.htm',{})
 
 			@@include('html/_video.htm',{})
 
@@ -203,6 +203,7 @@
 
 		</main>
 		@@include('html/_footer.htm',{})
+		@@include('html/_popup.htm',{})
 	</div>
 	@@include('html/_js.htm',{})
 </body>

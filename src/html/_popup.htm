@@ -2,9 +2,38 @@
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
+
+			<div class="popup__inner">
+				<h6 class="popup__title">Оставьте свои контактные данные </h6>
+				<div class="popup__text">Наш менеджер свяжется с вами <br>
+					для обсуждения деталей в ближайшее время</div>
 			</div>
+			<form action="#" class="popup__form form-popup">
+				<div class="form-popup__input-block">
+					<input autocomplete="off" type="text" name="form[]" placeholder="Имя" class="form-popup__input input-big">
+				</div>
+				<div class="form-popup__input-block">
+					<div class="form-popup__flag"><img src="@img/uz-flag.jpg" alt="" loading="lazy"></div>
+					<input autocomplete="off" type="text" name="form[]" placeholder="+998 999-99-99" class="form-popup__input input-big">
+				</div>
+				<button class="form-popup__button button">Оставить заявку</button>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="thank" aria-hidden="true" class="popup popup-thank">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрити</button>
+
+			<div class="popup__inner">
+				<h6 class="popup__title">Спасибо за заявку! </h6>
+				<div class="popup__text">Наш менеджер свяжется с вами в ближайшее время!</div>
+			</div>
+
 		</div>
 	</div>
 </div>
