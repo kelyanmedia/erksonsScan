@@ -224,6 +224,61 @@ function initSliders() {
     }
   }
 
+  for (const mobileSlider of document.querySelectorAll(".technologies__items")) {
+    if (mobileSlider) {
+      ;(function () {
+        "use strict"
+
+        const breakpoint = window.matchMedia("(min-width:768px)")
+        let slider
+
+        const enableSwiper = function () {
+          slider = new Swiper(mobileSlider, {
+            modules: [Navigation],
+            observer: true,
+            observeParents: true,
+            speed: 300,
+            loop: true,
+            lazyPreloaderClass: "preloader",
+
+            navigation: {
+              prevEl: ".technologies__navigation .button-prev",
+              nextEl: ".technologies__navigation .button-next",
+            },
+
+            breakpoints: {
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+              },
+              400: {
+                slidesPerView: 1.25,
+                spaceBetween: 15,
+              },
+              660: {
+                slidesPerView: 1.45,
+                spaceBetween: 15,
+              },
+            },
+          })
+        }
+
+        const breakpointChecker = function () {
+          if (breakpoint.matches === true) {
+            if (slider !== undefined) slider.destroy(true, true)
+
+            return
+          } else if (breakpoint.matches === false) {
+            return enableSwiper()
+          }
+        }
+
+        breakpoint.addListener(breakpointChecker)
+        breakpointChecker()
+      })()
+    }
+  }
+
   if (document.querySelector(".product__slider")) {
     const productTrumbSlider = new Swiper(".product__trumbs-slider", {
       modules: [Mousewheel],
